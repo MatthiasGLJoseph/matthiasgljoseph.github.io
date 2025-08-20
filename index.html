@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Clean Code Lesson Docs</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">Clean Code Lesson Docs</a>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#cleaning-code-lesson" class="nav-link">Cleaning Code Lesson</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#installation" class="nav-link">Installation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#commands" class="nav-link">Commands</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#usage" class="nav-link">Usage</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#project-layout" class="nav-link">Project layout</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#made-using-git-mkdocs-poetry" class="nav-link">Made using Git, MkDocs, Poetry</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="cleaning-code-lesson">Cleaning Code Lesson</h1>
+<p>A repository made to stock good practice lessons when it comes to cleaning python code.
+Includes a basic hello function.</p>
+<h2 id="installation">Installation</h2>
+<p>No installation should be required.
+In case of trouble a configuration misshap might be occurring between python and its modules.
+In that case, follow this to use the function through the creation module.</p>
+<ul>
+<li><code>curl -sSL https://install.python-poetry.org | python3 -</code> - To install poetry</li>
+<li><code>poetry install</code> - To install the project in poetry</li>
+<li><code>poetry update</code> - To check whether any module used is obsolete and replace it</li>
+<li><code>poetry run hello --name &lt;NAME&gt;</code> - Use example function with arg NAME through main interface</li>
+</ul>
+<h2 id="commands">Commands</h2>
+<ul>
+<li><code>mkdocs new [dir-name]</code> - Create a new project</li>
+<li><code>mkdocs serve</code> - Start the live-reloading docs server</li>
+<li><code>mkdocs build</code> - Build the documentation site</li>
+<li><code>mkdocs -h</code> - Print help message and exit</li>
+<li><code>hello --name &lt;NAME&gt;</code> - Use example function with arg NAME</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>Its main usage is as a learning tool to clean data.
+Data can be relatively clean through following good standards.
+There are however over 800 basic rules of cleaning standards, sometimes contradictory.
+Using functions such as Ruff in pre-commits allows to tailor cleanliness to all chosen standards.
+You can check out the Poetry config file to view the Ruff configuration.
+The pre-commit config file also contains Ruff configuration.</p>
+<h2 id="project-layout">Project layout</h2>
+<pre><code>.gitignore              # Git file to choose what not to send to GitHub
+.pre-commit-config.yaml # Pre-commit config file
+mkdocs.yml              # Markdown docs config file
+poetry.lock             # Full module package explanation
+pyproject.toml          # Poetry config file
+README.md               # Readme file
+.../                    # Cache folder(s)
+docs/
+    index.md            # MkDocs homepage
+src/
+    matthiasgljoseph_toolkit/
+        .../            # Cache folder(s)
+        __init__.py     # Init file to mark module, good practice to obsolete
+        cli.py          # Main module source file
+tests/
+    __init__.py         # Init file for the test folder, useful for test implementation
+</code></pre>
+<h2 id="made-using-git-mkdocs-poetry">Made using Git, MkDocs, Poetry</h2>
+<p>For Git documentation visit <a href="https://git-scm.com/doc">git-scm.com</a>
+For MkDocs documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>
+For Poetry documentation visit <a href="https://python-poetry.org/docs/">python-poetry.org</a>
+For Ruff documentation visit <a href="https://docs.astral.sh/ruff/">docs.astral.sh</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2025-08-20 16:01:14.145438+00:00
+-->
